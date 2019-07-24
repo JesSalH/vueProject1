@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>VueJS Tutorials</title>
+
+        <link href="styles.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+       <div id="vue-app">
+           <h1>Hey, {{ name }} </h1>
+           <p> I am a {{ job }} </p>
+           <p> {{ greet( 'afternooon' ) }} </P>
+
+           <!-- ojo a como bindeamos una url -->
+           <a v-bind:href="website"> My page </a>
+           <br/>
+           <!-- forma abreviada de bindear (solo con :) -->
+           <input type="text" :value="name" />
+
+           <!-- asi es como se coloca directamente html -->
+           <p v-html="websiteTag" target="_blank"> </p>
+
+            <br/>
+            <!-- Events -->
+            <h1> EVENTS </h1>
+            <p> My age is: {{age}} </p>
+            <!-- ojo que en el evento estamos llamando a la variable y
+            maniupandola directamente -->
+            <button v-on:click="age++"> Add year </button>
+            <!-- aqui llamamos a un metodo, ojo que no hace falta el parentesis de
+          despues de la funcion pq ya va en un evento (v-on) SI VA SIN PARAMETROS  -->
+            <button v-on:click="substract(1)"> Substract year </button>
+
+            <button v-on:dblclick="age+=10"> Add 10  years </button>
+            <button v-on:dblclick="substract(10)"> Substract 10  years </button>
+
+
+       </div>
+   </body>
+
+   <script src="app.js"></script>
+</html>
